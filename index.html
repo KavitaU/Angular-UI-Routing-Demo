@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Project AngualrJS</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/style.css"/>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.js"></script>
+    <script src="app.js"></script>
+    <script src="pages/empRecords/emp.Controller.js"></script>
+    <script src="pages/aboutUS/about.Controller.js"></script>
+    <script src="pages/contactUs/contact.Controller.js"></script>
+    <script src="pages/t&c/t&c.Controller.js"></script>
+    <script src="pages/nav.Controller.js"></script>
+</head>
+<body ng-app="myApp">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-7 center-block">
+            <header ng-include="'pages/nav.html'"></header>
+            <div ui-view="">Select Tab</div>
+            <footer ng-include="'templates/footer.html'"></footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

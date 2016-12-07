@@ -1,0 +1,4 @@
+<ul class="nav nav-tabs" ng-controller="navCtrl as NavCtrl">
+    <li ng-class="{'active': NavCtrl.activeTab === tab.name}" ng-repeat="tab in NavCtrl.tabs track by $index" ng-click="NavCtrl.goToDetailPage(tab.name)"><a>{{tab.name}}</a></li>
+</ul>
+

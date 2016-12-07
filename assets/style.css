@@ -1,0 +1,59 @@
+body{
+    background: #000;
+    margin: 20px;
+    color: #ffffff;
+}
+.tab-container{
+    color: #000000;
+}
+.center-block{
+    float: none;
+}
+.nav-tabs>li>a{
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+.nav>li>a:focus, .nav>li>a:hover{
+    color: #000000;
+}
+.tab-container{
+    background: #ffffff;
+    padding: 20px;
+    height: 500px;
+    overflow:auto ;
+    border-radius: 0 0 4px 4px;
+}
+table{
+    color: #000000;
+}
+table th, table td{
+    text-align: center;
+}
+table td{
+    line-height: 51px !important;
+}
+footer{
+    text-align: center;
+    padding: 20px;
+}
+.modal{
+    display: block;
+}
+.modal-dialog {
+    width: 655px;
+    margin: 19px auto;
+}
+.modal input{
+    width: 100%;
+}
+.error{
+    display: inline-block;
+    color: red;
+    font-size: 12px;
+    line-height: 40px;
+    margin: 5px 0 0;
+}
+.ng-invalid.ng-touched ,.asset-type-list .editable-input.textarea textarea.ng-invalid.ng-touched{
+    border:1px solid red;
+}

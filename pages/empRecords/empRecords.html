@@ -1,0 +1,75 @@
+<div class="tab-container">
+    <table class="table table-bordered">
+        <thead>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Emp-ID</th>
+        <th>Practice</th>
+        <th></th>
+        <th></th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="emp in empList">
+            <td>{{$index+1}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.empId}}</td>
+            <td>{{emp.empPractice}}</td>
+            <td><button type="button" class="btn btn-info" ng-click="toggle(emp)">View Details</button></td>
+            <td><button type="button" class="btn btn-default" ng-click="delete()">Delete</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="modal" ng-if="!isVisible">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-label="Close" ng-click="toggle()"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Employee Details</h4>
+                </div>
+                <div class="modal-body" ng-if="slectedEmpRecord">
+                    <form name="userForm" novalidate>
+                        <table class="table table-bordered">
+                            <thead>
+                            <th>emp.</th>
+                            <th>Emp-ID</th>
+                            <th>Practice</th>
+                            <th></th>
+                            <th></th>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{slectedEmpRecord.empName}}
+                                    <input type="text" name="empName" placeholder="{{slectedEmpRecord.editableName}}" ng-model="slectedEmpRecord.empName" ng-show="editorEnabled" required>
+                                    <div class="error" ng-show="userForm.empName.$error.required && userForm.empName.$touched">Field is required.</div>
+
+                                </td>
+                                <td>{{slectedEmpRecord.empId}} <input type="text" name="empId" placeholder="{{slectedEmpRecord.editableID}}" ng-model="slectedEmpRecord.empId" ng-show="editorEnabled" required>
+                                    <div class="error" ng-show="userForm.empId.$error.required && userForm.empId.$touched">Field is required.</div>
+
+                                </td>
+                                <td>{{slectedEmpRecord.empPractice}} <input type="text" name="empPractice" placeholder="{{slectedEmpRecord.editablePractice}}" ng-model="slectedEmpRecord.empPractice"  ng-show="editorEnabled" required>
+                                    <div class="error" ng-show="userForm.empPractice.$error.required && userForm.empPractice.$touched">Field is required.</div>
+
+                                </td>
+
+                                <td><button type="button" class="btn btn-default" ng-click="enableEditor(emp)">Edit</button></td>
+                                <td><button type="button" class="btn btn-default" ng-click="cancel()" ng-show="editorEnabled">Cancel</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-default" ng-click="toggle()">Close</button>
+                        <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" ng-click="save(slectedEmpRecord)" ng-disabled="userForm.$invalid">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
